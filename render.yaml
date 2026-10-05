@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: holodesk-image-to-video
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: FAL_KEY
+        sync: false
